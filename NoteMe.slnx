@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="NoteMe/NoteMe.csproj" />
+  <Project Path="NoteMe/NoteMeApp.csproj" />
+  <Project Path="NoteMeDataAccess/NoteMeDataAccess.csproj" />
+  <Project Path="NoteServices/NoteServices.csproj" Id="6be7cfb0-e642-455c-9e21-62da9f114d6e" />
 </Solution>
