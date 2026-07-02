@@ -12,6 +12,7 @@ namespace NoteMe
 
         private int selectedNoteId = 0;
         private int currentUserId = 0;
+        private const string AllCategoriesFilter = "Tất cả danh mục";
 
         public MainWindow()
         {
@@ -38,14 +39,48 @@ namespace NoteMe
 
         private void LoadCategories()
         {
+            string? selectedFilter = cboFilterCategory.SelectedItem as string;
+
             cboCategory.ItemsSource = null;
             cboCategory.ItemsSource = categoryService.GetCategoriesByUser(currentUserId);
+
+            var filterCategories = categoryService
+                .GetCategoriesByUser(currentUserId)
+                .Select(c => c.Name)
+                .ToList();
+
+            filterCategories.Insert(0, AllCategoriesFilter);
+
+            cboFilterCategory.ItemsSource = null;
+            cboFilterCategory.ItemsSource = filterCategories;
+
+            if (!string.IsNullOrWhiteSpace(selectedFilter) &&
+                filterCategories.Contains(selectedFilter))
+            {
+                cboFilterCategory.SelectedItem = selectedFilter;
+            }
+            else
+            {
+                cboFilterCategory.SelectedIndex = 0;
+            }
         }
 
         private void LoadNotes()
         {
+            string keyword = txtSearch.Text.Trim();
+            string? selectedCategory = cboFilterCategory.SelectedItem as string;
+
+            if (selectedCategory == AllCategoriesFilter)
+            {
+                selectedCategory = null;
+            }
+
             dgNotes.ItemsSource = null;
-            dgNotes.ItemsSource = noteService.GetAllNotes(currentUserId);
+            dgNotes.ItemsSource = noteService.SearchNotes(
+                currentUserId,
+                keyword,
+                selectedCategory
+            );
         }
 
         private bool ValidateInput()
@@ -273,6 +308,32 @@ namespace NoteMe
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             ClearForm();
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (currentUserId != 0)
+            {
+                LoadNotes();
+            }
+        }
+
+        private void cboFilterCategory_SelectionChanged(
+            object sender,
+            SelectionChangedEventArgs e
+        )
+        {
+            if (currentUserId != 0)
+            {
+                LoadNotes();
+            }
+        }
+
+        private void btnClearFilter_Click(object sender, RoutedEventArgs e)
+        {
+            txtSearch.Clear();
+            cboFilterCategory.SelectedIndex = 0;
+            LoadNotes();
         }
 
         private void ClearForm()

@@ -17,6 +17,34 @@ namespace NoteMe.Services
                 .ToList();
         }
 
+        public List<Note> SearchNotes(int userId, string? keyword, string? category)
+        {
+            using var context = new NoteMeDbContext();
+
+            var query = context.Notes
+                .Where(n => n.UserId == userId);
+
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                keyword = keyword.Trim();
+
+                query = query.Where(n =>
+                    n.Title.Contains(keyword) ||
+                    n.Content.Contains(keyword));
+            }
+
+            if (!string.IsNullOrWhiteSpace(category))
+            {
+                category = category.Trim();
+
+                query = query.Where(n => n.Category == category);
+            }
+
+            return query
+                .OrderByDescending(n => n.CreatedAt)
+                .ToList();
+        }
+
         public void AddNote(Note note, int userId)
         {
             using var context = new NoteMeDbContext();
