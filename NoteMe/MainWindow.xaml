@@ -12,27 +12,57 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid x:Name="dgNotes"
-                  Grid.Column="0"
-                  AutoGenerateColumns="False"
-                  IsReadOnly="True"
-                  SelectionChanged="dgNotes_SelectionChanged"
-                  Margin="0,0,10,0">
+        <Grid Grid.Column="0" Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"
-                                    Binding="{Binding Id}"
-                                    Width="50"/>
+            <StackPanel Grid.Row="0" Margin="0,0,0,10">
+                <TextBlock Text="Tìm kiếm"
+                           FontWeight="Bold"/>
 
-                <DataGridTextColumn Header="Tiêu đề"
-                                    Binding="{Binding Title}"
-                                    Width="*"/>
+                <TextBox x:Name="txtSearch"
+                         Height="30"
+                         Margin="0,5,0,10"
+                         TextChanged="txtSearch_TextChanged"/>
 
-                <DataGridTextColumn Header="Danh mục"
-                                    Binding="{Binding Category}"
-                                    Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                <TextBlock Text="Lọc theo danh mục"
+                           FontWeight="Bold"/>
+
+                <ComboBox x:Name="cboFilterCategory"
+                          Height="30"
+                          Margin="0,5,0,10"
+                          SelectionChanged="cboFilterCategory_SelectionChanged"/>
+
+                <Button Content="Xóa lọc"
+                        Height="30"
+                        Width="90"
+                        HorizontalAlignment="Left"
+                        Click="btnClearFilter_Click"/>
+            </StackPanel>
+
+            <DataGrid x:Name="dgNotes"
+                      Grid.Row="1"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      SelectionChanged="dgNotes_SelectionChanged">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding Id}"
+                                        Width="50"/>
+
+                    <DataGridTextColumn Header="Tiêu đề"
+                                        Binding="{Binding Title}"
+                                        Width="*"/>
+
+                    <DataGridTextColumn Header="Danh mục"
+                                        Binding="{Binding Category}"
+                                        Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
         <StackPanel Grid.Column="1">
             <TextBlock Text="Tiêu đề" FontWeight="Bold"/>
