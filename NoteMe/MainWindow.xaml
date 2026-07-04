@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="NoteMe - Quản lý ghi chú"
-        Height="500"
-        Width="850"
+        Height="620"
+        Width="950"
         Loaded="Window_Loaded">
 
     <Grid Margin="10">
@@ -64,80 +64,130 @@
             </DataGrid>
         </Grid>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="Tiêu đề" FontWeight="Bold"/>
+        <ScrollViewer Grid.Column="1"
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Tiêu đề" FontWeight="Bold"/>
 
-            <TextBox x:Name="txtTitle"
-                     Height="30"
-                     Margin="0,5,0,10"/>
-
-            <TextBlock Text="Nội dung" FontWeight="Bold"/>
-
-            <TextBox x:Name="txtContent"
-                     Height="150"
-                     TextWrapping="Wrap"
-                     AcceptsReturn="True"
-                     VerticalScrollBarVisibility="Auto"
-                     Margin="0,5,0,10"/>
-
-            <TextBlock Text="Danh mục" FontWeight="Bold"/>
-
-            <ComboBox x:Name="cboCategory"
-                      Height="30"
-                      DisplayMemberPath="Name"
-                      SelectedValuePath="Name"
-                      SelectionChanged="cboCategory_SelectionChanged"
-                      Margin="0,5,0,10"/>
-
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                <TextBox x:Name="txtNewCategory"
-                         Width="170"
+                <TextBox x:Name="txtTitle"
                          Height="30"
-                         MaxLength="50"
-                         Margin="0,0,10,0"/>
+                         Margin="0,5,0,10"/>
 
-                <Button Content="Thêm danh mục"
-                        Width="100"
-                        Height="30"
-                        Click="btnAddCategory_Click"/>
+                <TextBlock Text="Nội dung" FontWeight="Bold"/>
 
-                <Button Content="Sửa danh mục"
-                        Width="100"
-                        Height="30"
-                        Margin="8,0,0,0"
-                        Click="btnUpdateCategory_Click"/>
+                <TextBox x:Name="txtContent"
+                         Height="150"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"
+                         Margin="0,5,0,10"/>
 
-                <Button Content="Xóa danh mục"
-                        Width="100"
-                        Height="30"
-                        Margin="8,0,0,0"
-                        Click="btnDeleteCategory_Click"/>
+                <TextBlock Text="Danh mục" FontWeight="Bold"/>
+
+                <ComboBox x:Name="cboCategory"
+                          Height="30"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="Name"
+                          SelectionChanged="cboCategory_SelectionChanged"
+                          Margin="0,5,0,10"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                    <TextBox x:Name="txtNewCategory"
+                             Width="170"
+                             Height="30"
+                             MaxLength="50"
+                             Margin="0,0,10,0"/>
+
+                    <Button Content="Thêm danh mục"
+                            Width="100"
+                            Height="30"
+                            Click="btnAddCategory_Click"/>
+
+                    <Button Content="Sửa danh mục"
+                            Width="100"
+                            Height="30"
+                            Margin="8,0,0,0"
+                            Click="btnUpdateCategory_Click"/>
+
+                    <Button Content="Xóa danh mục"
+                            Width="100"
+                            Height="30"
+                            Margin="8,0,0,0"
+                            Click="btnDeleteCategory_Click"/>
+                </StackPanel>
+
+                <TextBlock Text="Ghi âm"
+                           FontWeight="Bold"/>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,5,0,8">
+                    <Button x:Name="btnStartRecording"
+                            Content="Start Recording"
+                            Width="120"
+                            Height="30"
+                            Click="btnStartRecording_Click"/>
+
+                    <Button x:Name="btnStopRecording"
+                            Content="Stop"
+                            Width="80"
+                            Height="30"
+                            Margin="8,0,0,0"
+                            IsEnabled="False"
+                            Click="btnStopRecording_Click"/>
+
+                    <Button Content="Play"
+                            Width="80"
+                            Height="30"
+                            Margin="8,0,0,0"
+                            Click="btnPlayAudio_Click"/>
+                </StackPanel>
+
+                <TextBlock x:Name="txtAudioStatus"
+                           Text="Chọn ghi chú để ghi âm hoặc phát lại."
+                           Margin="0,0,0,8"/>
+
+                <DataGrid x:Name="dgAudios"
+                          Height="100"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          SelectionChanged="dgAudios_SelectionChanged"
+                          Margin="0,0,0,20">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="File"
+                                            Binding="{Binding FileName}"
+                                            Width="*"/>
+
+                        <DataGridTextColumn Header="Ngày ghi"
+                                            Binding="{Binding CreatedAt}"
+                                            Width="150"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Thêm"
+                            Width="90"
+                            Height="35"
+                            Click="btnAdd_Click"/>
+
+                    <Button Content="Sửa"
+                            Width="90"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            Click="btnUpdate_Click"/>
+
+                    <Button Content="Xóa"
+                            Width="90"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            Click="btnDelete_Click"/>
+
+                    <Button Content="Làm mới"
+                            Width="90"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            Click="btnClear_Click"/>
+                </StackPanel>
             </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Thêm"
-                        Width="90"
-                        Height="35"
-                        Click="btnAdd_Click"/>
-
-                <Button Content="Sửa"
-                        Width="90"
-                        Height="35"
-                        Margin="10,0,0,0"
-                        Click="btnUpdate_Click"/>
-
-                <Button Content="Xóa"
-                        Width="90"
-                        Height="35"
-                        Margin="10,0,0,0"
-                        Click="btnDelete_Click"/>
-
-                <Button Content="Làm mới"
-                        Width="90"
-                        Height="35"
-                        Margin="10,0,0,0"
-                        Click="btnClear_Click"/>
-            </StackPanel>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

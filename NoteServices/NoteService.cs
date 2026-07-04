@@ -1,6 +1,8 @@
 ﻿using NoteMe.Data;
 using NoteMe.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace NoteMe.Services
@@ -76,6 +78,11 @@ namespace NoteMe.Services
         {
             using var context = new NoteMeDbContext();
 
+            var audioPaths = context.AudioRecordings
+                .Where(a => a.NoteId == id && a.Note != null && a.Note.UserId == userId)
+                .Select(a => a.FilePath)
+                .ToList();
+
             var note = context.Notes
                 .FirstOrDefault(n => n.Id == id && n.UserId == userId);
 
@@ -83,7 +90,24 @@ namespace NoteMe.Services
             {
                 context.Notes.Remove(note);
                 context.SaveChanges();
+
+                audioPaths
+                    .Where(path => !string.IsNullOrWhiteSpace(path))
+                    .Select(GetFullAudioPath)
+                    .Where(File.Exists)
+                    .ToList()
+                    .ForEach(File.Delete);
             }
+        }
+
+        private static string GetFullAudioPath(string filePath)
+        {
+            if (Path.IsPathRooted(filePath))
+            {
+                return filePath;
+            }
+
+            return Path.Combine(AppContext.BaseDirectory, filePath);
         }
     }
 }
