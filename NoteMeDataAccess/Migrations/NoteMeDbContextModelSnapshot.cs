@@ -22,6 +22,37 @@ namespace NoteMe.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("NoteMe.Models.AudioRecording", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasMaxLength(260)
+                        .HasColumnType("nvarchar(260)");
+
+                    b.Property<int>("NoteId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NoteId");
+
+                    b.ToTable("AudioRecordings");
+                });
+
             modelBuilder.Entity("NoteMe.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -113,6 +144,17 @@ namespace NoteMe.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("NoteMe.Models.AudioRecording", b =>
+                {
+                    b.HasOne("NoteMe.Models.Note", "Note")
+                        .WithMany("AudioRecordings")
+                        .HasForeignKey("NoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Note");
+                });
+
             modelBuilder.Entity("NoteMe.Models.Category", b =>
                 {
                     b.HasOne("NoteMe.Models.User", "User")
@@ -133,6 +175,11 @@ namespace NoteMe.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NoteMe.Models.Note", b =>
+                {
+                    b.Navigation("AudioRecordings");
                 });
 #pragma warning restore 612, 618
         }

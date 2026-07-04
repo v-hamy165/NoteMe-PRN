@@ -1,5 +1,8 @@
-﻿using NoteMe.Models;
+using NoteMe.Models;
 using NoteMe.Services;
+using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,8 +12,10 @@ namespace NoteMe
     {
         private readonly NoteService noteService = new NoteService();
         private readonly CategoryService categoryService = new CategoryService();
+        private readonly AudioService audioService = new AudioService();
 
         private int selectedNoteId = 0;
+        private int selectedAudioId = 0;
         private int currentUserId = 0;
         private const string AllCategoriesFilter = "Tất cả danh mục";
 
@@ -35,6 +40,7 @@ namespace NoteMe
 
             LoadCategories();
             LoadNotes();
+            LoadAudios();
         }
 
         private void LoadCategories()
@@ -81,6 +87,25 @@ namespace NoteMe
                 keyword,
                 selectedCategory
             );
+        }
+
+        private void LoadAudios()
+        {
+            selectedAudioId = 0;
+            dgAudios.ItemsSource = null;
+
+            if (selectedNoteId == 0)
+            {
+                txtAudioStatus.Text = "Chọn ghi chú để ghi âm hoặc phát lại.";
+                return;
+            }
+
+            var audios = audioService.GetAudiosByNote(selectedNoteId, currentUserId);
+
+            dgAudios.ItemsSource = audios;
+            txtAudioStatus.Text = audios.Any()
+                ? $"Đã gắn {audios.Count} file ghi âm."
+                : "Ghi chú này chưa có file ghi âm.";
         }
 
         private bool ValidateInput()
@@ -165,6 +190,12 @@ namespace NoteMe
                 return;
             }
 
+            if (audioService.IsRecording)
+            {
+                MessageBox.Show("Vui lòng dừng ghi âm trước khi xóa ghi chú.");
+                return;
+            }
+
             MessageBoxResult result = MessageBox.Show(
                 "Bạn có chắc chắn muốn xóa ghi chú này không?",
                 "Xác nhận xóa",
@@ -193,6 +224,92 @@ namespace NoteMe
                 txtContent.Text = note.Content;
 
                 cboCategory.SelectedValue = note.Category;
+                LoadAudios();
+            }
+        }
+
+        private void dgAudios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgAudios.SelectedItem is AudioRecording audio)
+            {
+                selectedAudioId = audio.Id;
+            }
+        }
+
+        // Ham ghi am
+        private void btnStartRecording_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedNoteId == 0)
+            {
+                MessageBox.Show("Vui lòng chọn ghi chú để gắn file ghi âm.");
+                return;
+            }
+
+            try
+            {
+                audioService.StartRecording(selectedNoteId, currentUserId);
+
+                btnStartRecording.IsEnabled = false;
+                btnStopRecording.IsEnabled = true;
+                txtAudioStatus.Text = "Đang ghi âm...";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        // Ham dung ghi am
+        private async void btnStopRecording_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                AudioRecording? audio = await audioService.StopRecordingAsync();
+
+                if (audio == null)
+                {
+                    MessageBox.Show("File ghi âm rỗng nên không được lưu.");
+                }
+                else
+                {
+                    MessageBox.Show("Dừng ghi âm và lưu file thành công.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                btnStartRecording.IsEnabled = true;
+                btnStopRecording.IsEnabled = false;
+                LoadAudios();
+            }
+        }
+
+        // Ham phat lai audio
+        private void btnPlayAudio_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedNoteId == 0)
+            {
+                MessageBox.Show("Vui lòng chọn ghi chú.");
+                return;
+            }
+
+            if (selectedAudioId == 0)
+            {
+                MessageBox.Show("Vui lòng chọn file ghi âm cần phát.");
+                return;
+            }
+
+            try
+            {
+                audioService.PlayAudio(selectedAudioId, selectedNoteId, currentUserId);
+                txtAudioStatus.Text = "Đang phát lại file ghi âm.";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -339,6 +456,7 @@ namespace NoteMe
         private void ClearForm()
         {
             selectedNoteId = 0;
+            selectedAudioId = 0;
 
             txtTitle.Clear();
             txtContent.Clear();
@@ -346,6 +464,14 @@ namespace NoteMe
 
             cboCategory.SelectedIndex = -1;
             dgNotes.SelectedItem = null;
+            dgAudios.ItemsSource = null;
+            txtAudioStatus.Text = "Chọn ghi chú để ghi âm hoặc phát lại.";
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            audioService.Dispose();
+            base.OnClosing(e);
         }
     }
 }

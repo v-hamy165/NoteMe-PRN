@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\ss5\\NoteMe-PRN\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|e:\\ss5\\noteme-prn\\noteme\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|solutionrelative:noteme\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE131DBB-D7A5-E85C-C781-C9A15E40347C}|NoteMeDataAccess\\NoteMeDataAccess.csproj|e:\\ss5\\noteme-prn\\notemedataaccess\\data\\notemedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE131DBB-D7A5-E85C-C781-C9A15E40347C}|NoteMeDataAccess\\NoteMeDataAccess.csproj|solutionrelative:notemedataaccess\\data\\notemedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NoteMeDbContext.cs",
+              "DocumentMoniker": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "RelativeDocumentMoniker": "NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "ToolTip": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "RelativeToolTip": "NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-04T11:01:57.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\ss5\\NoteMe-PRN\\NoteMe\\appsettings.json",
+              "RelativeDocumentMoniker": "NoteMe\\appsettings.json",
+              "ToolTip": "E:\\ss5\\NoteMe-PRN\\NoteMe\\appsettings.json",
+              "RelativeToolTip": "NoteMe\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-04T10:50:43.595Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

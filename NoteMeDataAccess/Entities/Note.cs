@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace NoteMe.Models
@@ -21,6 +22,9 @@ namespace NoteMe.Models
         public int UserId { get; set; }
 
         public User? User { get; set; }
+
+        public ICollection<AudioRecording> AudioRecordings { get; set; } =
+            new List<AudioRecording>();
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }

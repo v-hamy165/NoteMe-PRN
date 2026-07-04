@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using NoteMe.Models;
 using System;
 using System.IO;
@@ -13,6 +13,8 @@ namespace NoteMe.Data
         public DbSet<User> Users { get; set; }
 
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<AudioRecording> AudioRecordings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,6 +45,12 @@ namespace NoteMe.Data
             modelBuilder.Entity<Category>()
                 .HasIndex(c => new { c.UserId, c.Name })
                 .IsUnique();
+
+            modelBuilder.Entity<AudioRecording>()
+                .HasOne(a => a.Note)
+                .WithMany(n => n.AudioRecordings)
+                .HasForeignKey(a => a.NoteId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
