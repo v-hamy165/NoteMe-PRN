@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\ss5\\NoteMe-PRN\\",
+  "WorkspaceRootPath": "D:\\LamProjectC#\\NoteMe-PRN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|e:\\ss5\\noteme-prn\\noteme\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{EE131DBB-D7A5-E85C-C781-C9A15E40347C}|NoteMeDataAccess\\NoteMeDataAccess.csproj|d:\\lamprojectc#\\noteme-prn\\notemedataaccess\\data\\notemedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE131DBB-D7A5-E85C-C781-C9A15E40347C}|NoteMeDataAccess\\NoteMeDataAccess.csproj|solutionrelative:notemedataaccess\\data\\notemedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|d:\\lamprojectc#\\noteme-prn\\noteme\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|solutionrelative:noteme\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE131DBB-D7A5-E85C-C781-C9A15E40347C}|NoteMeDataAccess\\NoteMeDataAccess.csproj|e:\\ss5\\noteme-prn\\notemedataaccess\\data\\notemedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE131DBB-D7A5-E85C-C781-C9A15E40347C}|NoteMeDataAccess\\NoteMeDataAccess.csproj|solutionrelative:notemedataaccess\\data\\notemedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|d:\\lamprojectc#\\noteme-prn\\noteme\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|solutionrelative:noteme\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|d:\\lamprojectc#\\noteme-prn\\noteme\\appsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|solutionrelative:noteme\\appsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|d:\\lamprojectc#\\noteme-prn\\noteme\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{30C4AEDE-4E9B-E1F8-E888-0724A43A8BF4}|NoteMe\\NoteMeApp.csproj|solutionrelative:noteme\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +30,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NoteMeDbContext.cs",
-              "DocumentMoniker": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
-              "RelativeDocumentMoniker": "NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
-              "ToolTip": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
-              "RelativeToolTip": "NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\App.xaml",
+              "RelativeDocumentMoniker": "NoteMe\\App.xaml",
+              "ToolTip": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\App.xaml",
+              "RelativeToolTip": "NoteMe\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-06T13:07:28.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppSession.cs",
+              "DocumentMoniker": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\AppSession.cs",
+              "RelativeDocumentMoniker": "NoteMe\\AppSession.cs",
+              "ToolTip": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\AppSession.cs",
+              "RelativeToolTip": "NoteMe\\AppSession.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-06T13:07:26.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "NoteMe\\MainWindow.xaml",
+              "ToolTip": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\MainWindow.xaml",
+              "RelativeToolTip": "NoteMe\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-06T13:06:25.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NoteMeDbContext.cs",
+              "DocumentMoniker": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "RelativeDocumentMoniker": "NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "ToolTip": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "RelativeToolTip": "NoteMeDataAccess\\Data\\NoteMeDbContext.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-04T11:01:57.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\ss5\\NoteMe-PRN\\NoteMe\\appsettings.json",
+              "DocumentMoniker": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\appsettings.json",
               "RelativeDocumentMoniker": "NoteMe\\appsettings.json",
-              "ToolTip": "E:\\ss5\\NoteMe-PRN\\NoteMe\\appsettings.json",
+              "ToolTip": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMe\\appsettings.json",
               "RelativeToolTip": "NoteMe\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-07-04T10:50:43.595Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 113,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             }
           ]
         }

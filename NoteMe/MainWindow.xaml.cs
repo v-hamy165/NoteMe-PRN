@@ -313,6 +313,22 @@ namespace NoteMe
             }
         }
 
+        private void btnAiSummary_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgNotes.SelectedItem is not Note note)
+            {
+                MessageBox.Show("Vui lòng chọn ghi chú cần tóm tắt.");
+                return;
+            }
+
+            var summaryWindow = new SummaryWindow(note.Id, note.Title, currentUserId)
+            {
+                Owner = this
+            };
+
+            summaryWindow.ShowDialog();
+        }
+
         private void btnAddCategory_Click(object sender, RoutedEventArgs e)
         {
             string categoryName = txtNewCategory.Text.Trim();

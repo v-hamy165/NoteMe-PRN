@@ -4007,19 +4007,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ledai\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
+      "projectUniqueName": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
       "projectName": "NoteMeDataAccess",
-      "projectPath": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
-      "packagesPath": "C:\\Users\\ledai\\.nuget\\packages\\",
-      "outputPath": "E:\\ss5\\NoteMe-PRN\\NoteMeDataAccess\\obj\\",
+      "projectPath": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\LamProjectC#\\NoteMe-PRN\\NoteMeDataAccess\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ledai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4085,6 +4090,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.28, 8.0.28]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.28, 8.0.28]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.28, 8.0.28]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

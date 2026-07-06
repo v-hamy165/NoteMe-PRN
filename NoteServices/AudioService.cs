@@ -63,9 +63,11 @@ namespace NoteMe.Services
             currentUserId = userId;
             stopRecordingTask = new TaskCompletionSource<AudioRecording?>();
 
+            // 16kHz mono du chuan cho giong noi, file nho hon ~2.7 lan so voi 44.1kHz
+            // nen upload cho Gemini phan tich nhanh hon.
             waveIn = new WaveInEvent
             {
-                WaveFormat = new WaveFormat(44100, 1)
+                WaveFormat = new WaveFormat(16000, 1)
             };
 
             writer = new WaveFileWriter(currentFullPath, waveIn.WaveFormat);

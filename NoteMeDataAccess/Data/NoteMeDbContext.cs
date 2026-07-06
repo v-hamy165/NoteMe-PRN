@@ -16,6 +16,8 @@ namespace NoteMe.Data
 
         public DbSet<AudioRecording> AudioRecordings { get; set; }
 
+        public DbSet<MeetingSummary> MeetingSummaries { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string settingsPath = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
@@ -50,6 +52,12 @@ namespace NoteMe.Data
                 .HasOne(a => a.Note)
                 .WithMany(n => n.AudioRecordings)
                 .HasForeignKey(a => a.NoteId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<MeetingSummary>()
+                .HasOne(s => s.Note)
+                .WithMany()
+                .HasForeignKey(s => s.NoteId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
