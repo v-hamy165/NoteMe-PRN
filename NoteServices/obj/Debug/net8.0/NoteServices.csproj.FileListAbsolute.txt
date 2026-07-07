@@ -49,3 +49,38 @@ D:\LamProjectC#\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-SemiBoldI
 D:\LamProjectC#\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Thin.ttf
 D:\LamProjectC#\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-ThinItalic.ttf
 D:\LamProjectC#\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\OFL.txt
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Black.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-BlackItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Bold.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-BoldItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-ExtraBold.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-ExtraBoldItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-ExtraLight.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-ExtraLightItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Italic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Light.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-LightItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Medium.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-MediumItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Regular.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-SemiBold.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-SemiBoldItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-Thin.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\Lato-ThinItalic.ttf
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\LatoFont\OFL.txt
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\NoteServices.deps.json
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\NoteServices.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\NoteServices.pdb
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\NoteMeDataAccess.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\bin\Debug\net8.0\NoteMeDataAccess.pdb
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.csproj.AssemblyReference.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.AssemblyInfoInputs.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.AssemblyInfo.cs
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.csproj.CoreCompileInputs.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.sourcelink.json
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServ.5DE18C13.Up2Date
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\refint\NoteServices.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\NoteServices.pdb
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteServices\obj\Debug\net8.0\ref\NoteServices.dll

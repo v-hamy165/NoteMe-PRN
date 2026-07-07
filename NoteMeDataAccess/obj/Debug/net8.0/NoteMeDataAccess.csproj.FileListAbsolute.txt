@@ -42,3 +42,18 @@ D:\LamProjectC#\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\refint\NoteMeDataAc
 D:\LamProjectC#\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.pdb
 D:\LamProjectC#\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.genruntimeconfig.cache
 D:\LamProjectC#\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\ref\NoteMeDataAccess.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\bin\Debug\net8.0\NoteMeDataAccess.deps.json
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\bin\Debug\net8.0\NoteMeDataAccess.runtimeconfig.json
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\bin\Debug\net8.0\NoteMeDataAccess.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\bin\Debug\net8.0\NoteMeDataAccess.pdb
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.csproj.AssemblyReference.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.AssemblyInfoInputs.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.AssemblyInfo.cs
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.csproj.CoreCompileInputs.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.sourcelink.json
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\refint\NoteMeDataAccess.dll
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.pdb
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\NoteMeDataAccess.genruntimeconfig.cache
+D:\FPT Uni\ky5\PRN212\NoteMe-PRN\NoteMeDataAccess\obj\Debug\net8.0\ref\NoteMeDataAccess.dll
