@@ -469,6 +469,23 @@ namespace NoteMe
             LoadNotes();
         }
 
+        private void btnOpenDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            NoteMe.Dashboard.DashboardWindow? existing = Application.Current.Windows
+                .OfType<NoteMe.Dashboard.DashboardWindow>()
+                .FirstOrDefault();
+
+            if (existing != null)
+            {
+                existing.Activate();
+            }
+            else
+            {
+                NoteMe.Dashboard.DashboardWindow dashboard = new NoteMe.Dashboard.DashboardWindow();
+                dashboard.Show();
+            }
+        }
+
         private void ClearForm()
         {
             selectedNoteId = 0;
@@ -482,6 +499,38 @@ namespace NoteMe
             dgNotes.SelectedItem = null;
             dgAudios.ItemsSource = null;
             txtAudioStatus.Text = "Chọn ghi chú để ghi âm hoặc phát lại.";
+        }
+
+        public void TriggerClearForm()
+        {
+            ClearForm();
+            txtTitle.Focus();
+        }
+
+        public void SelectNoteById(int noteId)
+        {
+            if (dgNotes.ItemsSource is System.Collections.IEnumerable items)
+            {
+                foreach (var item in items)
+                {
+                    if (item is Note note && note.Id == noteId)
+                    {
+                        dgNotes.SelectedItem = note;
+                        dgNotes.ScrollIntoView(note);
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void FocusCategorySection()
+        {
+            txtNewCategory.Focus();
+        }
+
+        public void FocusAudioSection()
+        {
+            btnStartRecording.Focus();
         }
 
         protected override void OnClosing(CancelEventArgs e)

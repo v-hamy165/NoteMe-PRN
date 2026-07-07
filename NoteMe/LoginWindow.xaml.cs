@@ -1,4 +1,5 @@
-﻿using NoteMe.Models;
+using NoteMe.Dashboard;
+using NoteMe.Models;
 using NoteMe.Services;
 using System.Windows;
 
@@ -41,8 +42,8 @@ namespace NoteMe
             {
                 AppSession.CurrentUser = user;
 
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                DashboardWindow dashboardWindow = new DashboardWindow();
+                dashboardWindow.Show();
 
                 this.Close();
             }

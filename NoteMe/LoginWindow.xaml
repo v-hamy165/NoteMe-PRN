@@ -1,39 +1,90 @@
-﻿<Window x:Class="NoteMe.LoginWindow"
+<Window x:Class="NoteMe.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="NoteMe - Đăng nhập"
-        Height="300"
-        Width="400"
+        Height="460"
+        Width="420"
         WindowStartupLocation="CenterScreen"
+        Background="#F1F5F9"
         Loaded="Window_Loaded">
 
-    <Grid Margin="30">
-        <StackPanel VerticalAlignment="Center">
+    <Grid>
+        <!-- Nền dải màu Gradient Hiện đại -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#0F172A" Offset="0.0"/>
+                <GradientStop Color="#1E293B" Offset="0.6"/>
+                <GradientStop Color="#2563EB" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-            <TextBlock Text="Đăng nhập NoteMe"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"
-                       Margin="0,0,0,25"/>
+        <!-- Thẻ đăng nhập bo góc và đổ bóng -->
+        <Border Background="White"
+                CornerRadius="12"
+                Width="340"
+                Height="360"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="24" ShadowDepth="4" Opacity="0.25" Color="#000000"/>
+            </Border.Effect>
 
-            <TextBlock Text="Tên đăng nhập"
-                       FontWeight="Bold"/>
+            <Grid Margin="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <TextBox x:Name="txtUsername"
-                     Height="32"
-                     Margin="0,5,0,15"/>
+                <!-- Header / Logo -->
+                <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,20">
+                    <TextBlock Text="📝 NoteMe"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="#3B82F6"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Đăng nhập tài khoản của bạn"
+                               FontSize="12"
+                               Foreground="#64748B"
+                               Margin="0,6,0,0"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
 
-            <TextBlock Text="Mật khẩu"
-                       FontWeight="Bold"/>
+                <!-- Form Inputs -->
+                <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                    <TextBlock Text="Tên đăng nhập"
+                               FontSize="12.5"
+                               FontWeight="SemiBold"
+                               Foreground="#475569"
+                               Margin="0,0,0,6"/>
+                    <TextBox x:Name="txtUsername"
+                             Height="38"
+                             VerticalContentAlignment="Center"
+                             Margin="0,0,0,16"/>
 
-            <PasswordBox x:Name="txtPassword"
-                         Height="32"
-                         Margin="0,5,0,20"/>
+                    <TextBlock Text="Mật khẩu"
+                               FontSize="12.5"
+                               FontWeight="SemiBold"
+                               Foreground="#475569"
+                               Margin="0,0,0,6"/>
+                    <PasswordBox x:Name="txtPassword"
+                                 Height="38"
+                                 VerticalContentAlignment="Center"
+                                 Margin="0,0,0,10"/>
+                </StackPanel>
 
-            <Button Content="Đăng nhập"
-                    Height="38"
-                    Click="btnLogin_Click"/>
-
-        </StackPanel>
+                <!-- Action Button -->
+                <Button x:Name="btnLogin"
+                        Grid.Row="2"
+                        Content="Đăng nhập"
+                        Height="42"
+                        FontSize="13.5"
+                        FontWeight="Bold"
+                        Background="#3B82F6"
+                        Foreground="White"
+                        Margin="0,10,0,10"
+                        Click="btnLogin_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
