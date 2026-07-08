@@ -68,6 +68,10 @@
                               SelectionChanged="cboFilterCategory_SelectionChanged"/>
 
                     <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -79,7 +83,7 @@
                                 Height="34"
                                 Background="#64748B"
                                 Foreground="White"
-                                Margin="0,0,4,0"
+                                Margin="0,0,4,6"
                                 Click="btnClearFilter_Click"/>
 
                         <Button x:Name="btnOpenDashboard"
@@ -88,8 +92,18 @@
                                 Height="34"
                                 Background="#8E44AD"
                                 Foreground="White"
-                                Margin="4,0,0,0"
+                                Margin="4,0,0,6"
                                 Click="btnOpenDashboard_Click"/>
+
+                        <Button x:Name="btnOpenTasks"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Content="✓ Việc cần làm &amp; nhắc lịch"
+                                Height="34"
+                                Background="#7C3AED"
+                                Foreground="White"
+                                Margin="0"
+                                Click="btnOpenTasks_Click"/>
                     </Grid>
                 </StackPanel>
 
@@ -196,9 +210,14 @@
                                                    Margin="0,0,0,4"/>
                                         <ComboBox x:Name="cboCategory"
                                                   Height="34"
-                                                  DisplayMemberPath="Name"
                                                   SelectedValuePath="Name"
-                                                  SelectionChanged="cboCategory_SelectionChanged"/>
+                                                  SelectionChanged="cboCategory_SelectionChanged">
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Name}"/>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
                                     </StackPanel>
 
                                     <!-- Thêm/Sửa danh mục mới -->

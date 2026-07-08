@@ -18,6 +18,8 @@ namespace NoteMe.Data
 
         public DbSet<MeetingSummary> MeetingSummaries { get; set; }
 
+        public DbSet<WorkTask> WorkTasks { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string settingsPath = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
@@ -59,6 +61,27 @@ namespace NoteMe.Data
                 .WithMany()
                 .HasForeignKey(s => s.NoteId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WorkTask>()
+                .HasOne(t => t.User)
+                .WithMany()
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<WorkTask>()
+                .HasOne(t => t.Note)
+                .WithMany()
+                .HasForeignKey(t => t.NoteId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<WorkTask>()
+                .HasOne(t => t.MeetingSummary)
+                .WithMany()
+                .HasForeignKey(t => t.MeetingSummaryId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<WorkTask>()
+                .HasIndex(t => new { t.UserId, t.DueDate });
         }
     }
 }

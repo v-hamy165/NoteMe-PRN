@@ -229,7 +229,18 @@
                                  Background="#F8FAFC"
                                  BorderBrush="#E2E8F0"
                                  VerticalScrollBarVisibility="Auto"
-                                 Margin="0,0,0,20"/>
+                                 Margin="0,0,0,8"/>
+
+                        <Button x:Name="btnCreateTasksFromAi"
+                                Content="✓ Tạo công việc từ AI"
+                                Height="36"
+                                HorizontalAlignment="Left"
+                                Padding="16,0"
+                                Margin="0,0,0,20"
+                                Background="#7C3AED"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                Click="btnCreateTasksFromAi_Click"/>
 
                         <!-- Bản ghi lời thoại -->
                         <Expander Header="Bản ghi lời thoại (transcript)"

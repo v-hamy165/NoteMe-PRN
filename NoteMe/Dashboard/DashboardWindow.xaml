@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="NoteMe - Dashboard"
         Height="680"
-        Width="980"
+        Width="1200"
         MinHeight="600"
-        MinWidth="800"
+        MinWidth="1050"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
 
@@ -460,6 +460,14 @@
                             Foreground="White"
                             Margin="0,0,6,0"
                             Click="btnExportPdf_Click"/>
+
+                    <Button x:Name="btnTasks"
+                            Content="✓ Việc cần làm"
+                            Style="{StaticResource ActionButton}"
+                            Background="#7C3AED"
+                            Foreground="White"
+                            Margin="0,0,6,0"
+                            Click="btnTasks_Click"/>
 
                     <Button x:Name="btnBack"
                             Content="🔙 Quay lại"

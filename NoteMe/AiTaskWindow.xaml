@@ -1,0 +1,36 @@
+<Window x:Class="NoteMe.AiTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tạo công việc từ AI" Height="560" Width="650"
+        MinHeight="500" MinWidth="580" WindowStartupLocation="CenterOwner" Background="#F1F5F9">
+    <Grid Margin="18">
+        <Border Background="White" CornerRadius="10" Padding="20" BorderBrush="#E2E8F0" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Margin="0,0,0,12">
+                    <TextBlock Text="Tạo công việc từ AI" FontSize="20" FontWeight="Bold" Foreground="#0F172A"/>
+                    <TextBlock Text="Chọn từng bước tiếp theo bạn muốn đưa vào danh sách việc cần làm." Foreground="#64748B" Margin="0,5,0,0"/>
+                </StackPanel>
+                <ListBox Grid.Row="1" x:Name="lstSteps" BorderBrush="#CBD5E1" Margin="0,0,0,14">
+                    <ListBox.ItemTemplate><DataTemplate><CheckBox IsChecked="{Binding IsSelected}" Margin="8" FontSize="14"><TextBlock Text="{Binding Title}" TextWrapping="Wrap"/></CheckBox></DataTemplate></ListBox.ItemTemplate>
+                </ListBox>
+                <Grid Grid.Row="2" Margin="0,0,0,12">
+                    <Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="12"/><ColumnDefinition/></Grid.ColumnDefinitions>
+                    <StackPanel><TextBlock Text="Hạn hoàn thành" FontWeight="SemiBold"/><DatePicker x:Name="dpDueDate" Height="34" Margin="0,5,0,0" SelectedDateChanged="ReminderInput_Changed"/></StackPanel>
+                    <StackPanel Grid.Column="2"><TextBlock Text="Mức ưu tiên" FontWeight="SemiBold"/><ComboBox x:Name="cboPriority" Height="34" Margin="0,5,0,0" SelectedValuePath="Key"/></StackPanel>
+                </Grid>
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <CheckBox x:Name="chkReminder" Content="Bật nhắc lịch, nhắc trước" IsChecked="True" VerticalAlignment="Center" Checked="ReminderInput_Changed" Unchecked="ReminderInput_Changed"/>
+                    <ComboBox x:Name="cboReminderOffset" Width="170" Height="32" Margin="10,0,0,0" SelectedValuePath="Key" SelectionChanged="ReminderInput_Changed"/>
+                </StackPanel>
+                <Border Grid.Row="4" Background="#F5F3FF" BorderBrush="#DDD6FE" BorderThickness="1" CornerRadius="6" Padding="10" Margin="0,10,0,0">
+                    <TextBlock x:Name="txtReminderAtPreview" Foreground="#5B21B6" FontWeight="SemiBold"/>
+                </Border>
+                <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,18,0,0">
+                    <Button Content="Hủy" Width="100" Height="36" Margin="0,0,8,0" IsCancel="True"/>
+                    <Button Content="Tạo công việc" Width="140" Height="36" Background="#7C3AED" Foreground="White" FontWeight="Bold" Click="btnCreate_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

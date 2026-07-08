@@ -191,6 +191,65 @@ namespace NoteMe.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("NoteMe.Models.WorkTask", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("MeetingSummaryId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NoteId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ReminderAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("ReminderSent")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MeetingSummaryId");
+
+                    b.HasIndex("NoteId");
+
+                    b.HasIndex("UserId", "DueDate");
+
+                    b.ToTable("WorkTasks");
+                });
+
             modelBuilder.Entity("NoteMe.Models.AudioRecording", b =>
                 {
                     b.HasOne("NoteMe.Models.Note", "Note")
@@ -231,6 +290,31 @@ namespace NoteMe.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NoteMe.Models.WorkTask", b =>
+                {
+                    b.HasOne("NoteMe.Models.MeetingSummary", "MeetingSummary")
+                        .WithMany()
+                        .HasForeignKey("MeetingSummaryId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("NoteMe.Models.Note", "Note")
+                        .WithMany()
+                        .HasForeignKey("NoteId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("NoteMe.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("MeetingSummary");
+
+                    b.Navigation("Note");
 
                     b.Navigation("User");
                 });

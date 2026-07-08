@@ -88,6 +88,19 @@ namespace NoteMe.Services
 
             if (note != null)
             {
+                var summaryIds = context.MeetingSummaries
+                    .Where(s => s.NoteId == id)
+                    .Select(s => s.Id)
+                    .ToList();
+
+                foreach (var task in context.WorkTasks.Where(t =>
+                             t.NoteId == id ||
+                             (t.MeetingSummaryId.HasValue && summaryIds.Contains(t.MeetingSummaryId.Value))))
+                {
+                    task.NoteId = null;
+                    task.MeetingSummaryId = null;
+                }
+
                 context.Notes.Remove(note);
                 context.SaveChanges();
 

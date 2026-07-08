@@ -41,6 +41,7 @@ namespace NoteMe
             LoadCategories();
             LoadNotes();
             LoadAudios();
+            TaskReminderManager.Start(currentUserId);
         }
 
         private void LoadCategories()
@@ -484,6 +485,13 @@ namespace NoteMe
                 NoteMe.Dashboard.DashboardWindow dashboard = new NoteMe.Dashboard.DashboardWindow();
                 dashboard.Show();
             }
+        }
+
+        private void btnOpenTasks_Click(object sender, RoutedEventArgs e)
+        {
+            TaskWindow? existing = Application.Current.Windows.OfType<TaskWindow>().FirstOrDefault();
+            if (existing != null) existing.Activate();
+            else new TaskWindow().Show();
         }
 
         private void ClearForm()

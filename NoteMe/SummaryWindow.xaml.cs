@@ -140,6 +140,26 @@ namespace NoteMe
             txtCompletedSteps.Text = summary?.CompletedSteps ?? string.Empty;
             txtNextSteps.Text = summary?.NextSteps ?? string.Empty;
             txtTranscript.Text = summary?.Transcript ?? string.Empty;
+            btnCreateTasksFromAi.IsEnabled = summary != null &&
+                !string.IsNullOrWhiteSpace(summary.NextSteps);
+        }
+
+        private void btnCreateTasksFromAi_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgSummaries.SelectedItem is not MeetingSummary summary ||
+                string.IsNullOrWhiteSpace(summary.NextSteps))
+            {
+                MessageBox.Show("Bản tóm tắt này không có bước tiếp theo để tạo công việc.");
+                return;
+            }
+
+            string[] steps = summary.NextSteps.Split(
+                new[] { "\r\n", "\n" },
+                StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
+            );
+            var dialog = new AiTaskWindow(userId, noteId, summary.Id, steps) { Owner = this };
+            if (dialog.ShowDialog() == true)
+                txtStatus.Text = "Đã chuyển các bước AI đã chọn thành công việc.";
         }
 
         private void btnExportPdf_Click(object sender, RoutedEventArgs e)

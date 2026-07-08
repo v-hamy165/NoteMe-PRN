@@ -118,6 +118,7 @@ namespace NoteMe.Dashboard
         private async void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
             await LoadDashboardAsync();
+            TaskReminderManager.Start(currentUserId);
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -135,6 +136,7 @@ namespace NoteMe.Dashboard
             }
 
             clockTimer?.Stop();
+            TaskReminderManager.Stop();
             AppSession.CurrentUser = null;
 
             LoginWindow loginWindow = Application.Current.Windows
@@ -168,6 +170,13 @@ namespace NoteMe.Dashboard
         private void btnManageNotes_Click(object sender, RoutedEventArgs e)
         {
             OpenMainWindow();
+        }
+
+        private void btnTasks_Click(object sender, RoutedEventArgs e)
+        {
+            TaskWindow? existing = Application.Current.Windows.OfType<TaskWindow>().FirstOrDefault();
+            if (existing != null) existing.Activate();
+            else new TaskWindow().Show();
         }
 
         private void btnOpenCategories_Click(object sender, RoutedEventArgs e)

@@ -99,6 +99,11 @@ namespace NoteMe.Services
                 return false;
             }
 
+            foreach (var task in context.WorkTasks.Where(t => t.MeetingSummaryId == summary.Id))
+            {
+                task.MeetingSummaryId = null;
+            }
+
             context.MeetingSummaries.Remove(summary);
             context.SaveChanges();
             return true;
