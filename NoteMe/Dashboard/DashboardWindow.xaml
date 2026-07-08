@@ -117,14 +117,24 @@
                     </StackPanel>
                 </StackPanel>
 
-                <Button x:Name="btnRefresh"
-                        Grid.Column="1"
-                        Content="🔄  Làm mới"
-                        Style="{StaticResource ActionButton}"
-                        Background="#3B82F6"
-                        Foreground="White"
-                        VerticalAlignment="Center"
-                        Click="btnRefresh_Click"/>
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <Button x:Name="btnRefresh"
+                            Content="🔄  Làm mới"
+                            Style="{StaticResource ActionButton}"
+                            Background="#3B82F6"
+                            Foreground="White"
+                            Margin="0,0,8,0"
+                            Click="btnRefresh_Click"/>
+
+                    <Button x:Name="btnLogout"
+                            Content="🚪  Đăng xuất"
+                            Style="{StaticResource ActionButton}"
+                            Background="#EF4444"
+                            Foreground="White"
+                            Click="btnLogout_Click"/>
+                </StackPanel>
             </Grid>
         </Border>
 

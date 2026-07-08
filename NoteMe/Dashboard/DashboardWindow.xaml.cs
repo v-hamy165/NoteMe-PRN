@@ -120,6 +120,43 @@ namespace NoteMe.Dashboard
             await LoadDashboardAsync();
         }
 
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn đăng xuất không?",
+                "Xác nhận đăng xuất",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+            if (result != MessageBoxResult.Yes)
+            {
+                return;
+            }
+
+            clockTimer?.Stop();
+            AppSession.CurrentUser = null;
+
+            LoginWindow loginWindow = Application.Current.Windows
+                .OfType<LoginWindow>()
+                .FirstOrDefault() ?? new LoginWindow();
+
+            if (!loginWindow.IsVisible)
+            {
+                loginWindow.Show();
+            }
+
+            loginWindow.Activate();
+
+            foreach (Window window in Application.Current.Windows
+                         .Cast<Window>()
+                         .Where(window => window != loginWindow)
+                         .ToList())
+            {
+                window.Close();
+            }
+        }
+
         // --- Quick Actions / Navigation ---
 
         private void btnNewNote_Click(object sender, RoutedEventArgs e)

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteServices\\NoteServices.csproj": {}
+    "E:\\PRN212_code\\NoteMe-PRN\\NoteServices\\NoteServices.csproj": {}
   },
   "projects": {
-    "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj": {
+    "E:\\PRN212_code\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
+        "projectUniqueName": "E:\\PRN212_code\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
         "projectName": "NoteMeDataAccess",
-        "projectPath": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteMeDataAccess\\obj\\",
+        "projectPath": "E:\\PRN212_code\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\PRN212_code\\NoteMe-PRN\\NoteMeDataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,11 +26,11 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -45,10 +45,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
@@ -88,24 +89,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteServices\\NoteServices.csproj": {
+    "E:\\PRN212_code\\NoteMe-PRN\\NoteServices\\NoteServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteServices\\NoteServices.csproj",
+        "projectUniqueName": "E:\\PRN212_code\\NoteMe-PRN\\NoteServices\\NoteServices.csproj",
         "projectName": "NoteServices",
-        "projectPath": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteServices\\NoteServices.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteServices\\obj\\",
+        "projectPath": "E:\\PRN212_code\\NoteMe-PRN\\NoteServices\\NoteServices.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "E:\\PRN212_code\\NoteMe-PRN\\NoteServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -114,15 +115,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj": {
-                "projectPath": "D:\\FPT Uni\\ky5\\PRN212\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj"
+              "E:\\PRN212_code\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj": {
+                "projectPath": "E:\\PRN212_code\\NoteMe-PRN\\NoteMeDataAccess\\NoteMeDataAccess.csproj"
               }
             }
           }
@@ -137,10 +138,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "NAudio": {
@@ -168,7 +170,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

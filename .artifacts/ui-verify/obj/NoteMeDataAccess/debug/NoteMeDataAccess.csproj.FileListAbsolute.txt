@@ -1,0 +1,15 @@
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\bin\NoteMeDataAccess\debug\NoteMeDataAccess.deps.json
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\bin\NoteMeDataAccess\debug\NoteMeDataAccess.runtimeconfig.json
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\bin\NoteMeDataAccess\debug\NoteMeDataAccess.dll
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\bin\NoteMeDataAccess\debug\NoteMeDataAccess.pdb
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.csproj.AssemblyReference.cache
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.AssemblyInfoInputs.cache
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.AssemblyInfo.cs
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.csproj.CoreCompileInputs.cache
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.sourcelink.json
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.dll
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\refint\NoteMeDataAccess.dll
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.pdb
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\NoteMeDataAccess.genruntimeconfig.cache
+E:\PRN212_code\NoteMe-PRN\.artifacts\ui-verify\obj\NoteMeDataAccess\debug\ref\NoteMeDataAccess.dll
