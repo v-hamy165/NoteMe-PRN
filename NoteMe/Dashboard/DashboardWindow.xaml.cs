@@ -41,6 +41,7 @@ namespace NoteMe.Dashboard
             clockTimer.Start();
 
             await LoadDashboardAsync();
+            TaskReminderManager.Start(currentUserId);
         }
 
         private void UpdateWelcomeMessage()
@@ -62,6 +63,7 @@ namespace NoteMe.Dashboard
                 var totalCategoriesTask = dashboardService.GetTotalCategoriesAsync(currentUserId);
                 var totalAudioTask = dashboardService.GetTotalAudioRecordingsAsync(currentUserId);
                 var totalSummariesTask = dashboardService.GetTotalAiSummariesAsync(currentUserId);
+                var totalOpenTasksTask = dashboardService.GetTotalOpenWorkTasksAsync(currentUserId);
                 var latestNotesTask = dashboardService.GetLatestNotesAsync(currentUserId, 5);
                 var categoryStatsTask = dashboardService.GetCategoryStatsAsync(currentUserId);
                 var activitiesTask = dashboardService.GetRecentActivitiesAsync(currentUserId, 10);
@@ -71,6 +73,7 @@ namespace NoteMe.Dashboard
                     totalCategoriesTask,
                     totalAudioTask,
                     totalSummariesTask,
+                    totalOpenTasksTask,
                     latestNotesTask,
                     categoryStatsTask,
                     activitiesTask
@@ -81,6 +84,7 @@ namespace NoteMe.Dashboard
                 txtTotalCategories.Text = totalCategoriesTask.Result.ToString();
                 txtTotalAudio.Text = totalAudioTask.Result.ToString();
                 txtTotalSummaries.Text = totalSummariesTask.Result.ToString();
+                txtTotalOpenTasks.Text = totalOpenTasksTask.Result.ToString();
 
                 // Bind Latest Notes & handle empty state
                 var latestNotes = latestNotesTask.Result;
@@ -177,12 +181,6 @@ namespace NoteMe.Dashboard
             TaskWindow? existing = Application.Current.Windows.OfType<TaskWindow>().FirstOrDefault();
             if (existing != null) existing.Activate();
             else new TaskWindow().Show();
-        }
-
-        private void btnOpenCategories_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = OpenMainWindow();
-            mainWindow.FocusCategorySection();
         }
 
         private void btnRecordAudio_Click(object sender, RoutedEventArgs e)

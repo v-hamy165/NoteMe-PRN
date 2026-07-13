@@ -62,6 +62,14 @@ namespace NoteMe.Services
                 .CountAsync(s => s.Note != null && s.Note.UserId == userId);
         }
 
+        public async Task<int> GetTotalOpenWorkTasksAsync(int userId)
+        {
+            using var context = new NoteMeDbContext();
+            return await context.WorkTasks
+                .CountAsync(t => t.UserId == userId &&
+                    (t.Status == WorkTaskStatus.Todo || t.Status == WorkTaskStatus.InProgress));
+        }
+
         public async Task<List<Note>> GetLatestNotesAsync(int userId, int count = 5)
         {
             using var context = new NoteMeDbContext();

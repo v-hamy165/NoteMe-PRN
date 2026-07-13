@@ -531,11 +531,6 @@ namespace NoteMe
             }
         }
 
-        public void FocusCategorySection()
-        {
-            txtNewCategory.Focus();
-        }
-
         public void FocusAudioSection()
         {
             btnStartRecording.Focus();

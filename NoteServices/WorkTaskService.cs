@@ -6,6 +6,8 @@ namespace NoteMe.Services
 {
     public class WorkTaskService
     {
+        private static DateTime CalculateReminderAt(DateTime dueDate) => dueDate.AddDays(-1);
+
         public List<WorkTask> GetTasks(int userId, WorkTaskStatus? status = null, DateTime? date = null)
         {
             using var context = new NoteMeDbContext();
@@ -23,10 +25,17 @@ namespace NoteMe.Services
                 query = query.Where(t => t.DueDate >= from && t.DueDate < to);
             }
 
-            return query.OrderBy(t => t.Status == WorkTaskStatus.Completed)
+            var tasks = query.OrderBy(t => t.Status == WorkTaskStatus.Completed)
                 .ThenBy(t => t.DueDate)
                 .ThenByDescending(t => t.Priority)
                 .ToList();
+
+            foreach (var task in tasks.Where(t => t.ReminderAt == null))
+            {
+                task.ReminderAt = CalculateReminderAt(task.DueDate);
+            }
+
+            return tasks;
         }
 
         public WorkTask Save(WorkTask task, int userId)
@@ -38,11 +47,14 @@ namespace NoteMe.Services
 
             using var context = new NoteMeDbContext();
             WorkTask entity;
+            DateTime reminderAt = CalculateReminderAt(task.DueDate);
             if (task.Id == 0)
             {
                 entity = task;
                 entity.UserId = userId;
                 entity.CreatedAt = DateTime.Now;
+                entity.ReminderAt = reminderAt;
+                entity.ReminderSent = false;
                 context.WorkTasks.Add(entity);
             }
             else
@@ -50,14 +62,19 @@ namespace NoteMe.Services
                 entity = context.WorkTasks.FirstOrDefault(t => t.Id == task.Id && t.UserId == userId)
                     ?? throw new InvalidOperationException("Công việc không còn tồn tại.");
                 DateTime? oldReminderAt = entity.ReminderAt;
+                WorkTaskStatus oldStatus = entity.Status;
                 entity.Title = task.Title.Trim();
                 entity.Description = task.Description.Trim();
                 entity.DueDate = task.DueDate;
                 entity.Priority = task.Priority;
                 entity.Status = task.Status;
-                entity.ReminderAt = task.ReminderAt;
-                if (oldReminderAt != entity.ReminderAt)
+                entity.ReminderAt = reminderAt;
+                if (oldReminderAt != entity.ReminderAt ||
+                    (oldStatus is WorkTaskStatus.Completed or WorkTaskStatus.Cancelled &&
+                     entity.Status is WorkTaskStatus.Todo or WorkTaskStatus.InProgress))
+                {
                     entity.ReminderSent = false;
+                }
             }
             entity.UpdatedAt = DateTime.Now;
             context.SaveChanges();
@@ -65,7 +82,7 @@ namespace NoteMe.Services
         }
 
         public int CreateFromAiSteps(int userId, int noteId, int summaryId, IEnumerable<string> steps,
-            DateTime dueDate, WorkTaskPriority priority, DateTime? reminderAt)
+            DateTime dueDate, WorkTaskPriority priority)
         {
             using var context = new NoteMeDbContext();
             bool sourceExists = context.MeetingSummaries.Any(s => s.Id == summaryId && s.NoteId == noteId &&
@@ -86,7 +103,8 @@ namespace NoteMe.Services
                     DueDate = dueDate,
                     Priority = priority,
                     Status = WorkTaskStatus.Todo,
-                    ReminderAt = reminderAt
+                    ReminderAt = CalculateReminderAt(dueDate),
+                    ReminderSent = false
                 });
             }
             context.SaveChanges();
@@ -107,8 +125,9 @@ namespace NoteMe.Services
         {
             using var context = new NoteMeDbContext();
             DateTime now = DateTime.Now;
+            DateTime reminderWindowEnd = now.AddDays(1);
             return context.WorkTasks.Where(t => t.UserId == userId && !t.ReminderSent &&
-                    t.ReminderAt != null && t.ReminderAt <= now &&
+                    t.DueDate <= reminderWindowEnd &&
                     t.Status != WorkTaskStatus.Completed && t.Status != WorkTaskStatus.Cancelled)
                 .OrderBy(t => t.DueDate).ToList();
         }

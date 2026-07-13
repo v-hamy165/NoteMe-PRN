@@ -88,3 +88,7 @@ E:\PRN212_code\NoteMe-PRN\.artifacts\reminder-layout-check\NoteMeDataAccess.deps
 E:\PRN212_code\NoteMe-PRN\.artifacts\reminder-layout-check\NoteMeDataAccess.runtimeconfig.json
 E:\PRN212_code\NoteMe-PRN\.artifacts\reminder-layout-check\NoteMeDataAccess.dll
 E:\PRN212_code\NoteMe-PRN\.artifacts\reminder-layout-check\NoteMeDataAccess.pdb
+E:\PRN212_code\NoteMe-PRN\.artifacts\verify-build\NoteMeDataAccess.deps.json
+E:\PRN212_code\NoteMe-PRN\.artifacts\verify-build\NoteMeDataAccess.runtimeconfig.json
+E:\PRN212_code\NoteMe-PRN\.artifacts\verify-build\NoteMeDataAccess.dll
+E:\PRN212_code\NoteMe-PRN\.artifacts\verify-build\NoteMeDataAccess.pdb

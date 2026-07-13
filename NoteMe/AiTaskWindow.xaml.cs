@@ -38,42 +38,6 @@ namespace NoteMe
                 new Choice<WorkTaskPriority>(WorkTaskPriority.High, "Cao")
             };
             cboPriority.SelectedValue = WorkTaskPriority.Medium;
-            cboReminderOffset.ItemsSource = new[]
-            {
-                new Choice<TimeSpan>(TimeSpan.FromMinutes(30), "30 phút"),
-                new Choice<TimeSpan>(TimeSpan.FromHours(1), "1 giờ"),
-                new Choice<TimeSpan>(TimeSpan.FromHours(3), "3 giờ"),
-                new Choice<TimeSpan>(TimeSpan.FromDays(1), "1 ngày")
-            };
-            cboReminderOffset.SelectedValue = TimeSpan.FromHours(1);
-            UpdateReminderPreview();
-        }
-
-        private void ReminderInput_Changed(object sender, RoutedEventArgs e) =>
-            UpdateReminderPreview();
-
-        private void UpdateReminderPreview()
-        {
-            if (txtReminderAtPreview == null)
-                return;
-
-            if (chkReminder?.IsChecked != true)
-            {
-                txtReminderAtPreview.Text = "ReminderAt: Không nhắc";
-                if (cboReminderOffset != null) cboReminderOffset.IsEnabled = false;
-                return;
-            }
-
-            if (cboReminderOffset != null) cboReminderOffset.IsEnabled = true;
-            if (dpDueDate?.SelectedDate == null ||
-                cboReminderOffset?.SelectedValue is not TimeSpan offset)
-            {
-                txtReminderAtPreview.Text = "ReminderAt: Chọn hạn hoàn thành và thời gian nhắc";
-                return;
-            }
-
-            DateTime reminderAt = dpDueDate.SelectedDate.Value.Date.AddHours(17) - offset;
-            txtReminderAtPreview.Text = $"ReminderAt: {reminderAt:dd/MM/yyyy HH:mm}";
         }
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
@@ -82,12 +46,12 @@ namespace NoteMe
             if (selected.Count == 0) { MessageBox.Show("Vui lòng chọn ít nhất một bước."); return; }
             if (dpDueDate.SelectedDate == null) { MessageBox.Show("Vui lòng chọn hạn hoàn thành."); return; }
             DateTime due = dpDueDate.SelectedDate.Value.Date.AddHours(17);
-            DateTime? reminder = chkReminder.IsChecked == true ? due - (TimeSpan)cboReminderOffset.SelectedValue : null;
             try
             {
                 int count = new WorkTaskService().CreateFromAiSteps(userId, noteId, summaryId, selected, due,
-                    (WorkTaskPriority)cboPriority.SelectedValue, reminder);
+                    (WorkTaskPriority)cboPriority.SelectedValue);
                 MessageBox.Show($"Đã tạo {count} công việc từ AI.", "Thành công", MessageBoxButton.OK, MessageBoxImage.Information);
+                TaskReminderManager.Start(userId);
                 DialogResult = true;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Không thể tạo công việc", MessageBoxButton.OK, MessageBoxImage.Error); }

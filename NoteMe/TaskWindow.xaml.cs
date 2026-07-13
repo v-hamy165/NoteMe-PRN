@@ -60,7 +60,13 @@ namespace NoteMe
         {
             var dialog = new TaskEditWindow(task) { Owner = this };
             if (dialog.ShowDialog() != true) return;
-            try { service.Save(dialog.Task, userId); LoadTasks(); LoadCalendar(); }
+            try
+            {
+                service.Save(dialog.Task, userId);
+                LoadTasks();
+                LoadCalendar();
+                TaskReminderManager.Start(userId);
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Không thể lưu", MessageBoxButton.OK, MessageBoxImage.Error); }
         }
 

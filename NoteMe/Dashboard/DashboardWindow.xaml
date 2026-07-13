@@ -200,6 +200,18 @@
                     </StackPanel>
                 </Border>
 
+                <!-- Total Open Work Tasks -->
+                <Border Style="{StaticResource StatCardBorder}"
+                        Background="#F59E0B">
+                    <StackPanel>
+                        <TextBlock Text="✓  Việc cần làm"
+                                   Style="{StaticResource CardLabel}"/>
+                        <TextBlock x:Name="txtTotalOpenTasks"
+                                   Text="0"
+                                   Style="{StaticResource CardValue}"/>
+                    </StackPanel>
+                </Border>
+
             </StackPanel>
 
             <!-- ── Right column: latest notes + category stats + recent activities ── -->
@@ -422,20 +434,12 @@
                             Click="btnNewNote_Click"/>
 
                     <Button x:Name="btnManageNotes"
-                            Content="📋 Quản lý ghi chú"
+                            Content="📋 Quản lý ghi chú &amp; danh mục"
                             Style="{StaticResource ActionButton}"
                             Background="#3B82F6"
                             Foreground="White"
                             Margin="0,0,6,0"
                             Click="btnManageNotes_Click"/>
-
-                    <Button x:Name="btnOpenCategories"
-                            Content="🗂️ Quản lý danh mục"
-                            Style="{StaticResource ActionButton}"
-                            Background="#0D9488"
-                            Foreground="White"
-                            Margin="0,0,6,0"
-                            Click="btnOpenCategories_Click"/>
 
                     <Button x:Name="btnRecordAudio"
                             Content="🎙️ Ghi âm"

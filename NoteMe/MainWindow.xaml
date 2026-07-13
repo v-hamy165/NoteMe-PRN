@@ -1,7 +1,7 @@
 <Window x:Class="NoteMe.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="NoteMe - Quản lý ghi chú"
+        Title="NoteMe - Quản lý ghi chú &amp; danh mục"
         Height="700"
         Width="1050"
         MinHeight="650"
